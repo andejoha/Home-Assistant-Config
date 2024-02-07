@@ -1,0 +1,16 @@
+# Loads default set of integrations. Do not remove.
+default_config:
+
+http:
+  ssl_certificate: /ssl/fullchain.pem
+  ssl_key: /ssl/privkey.pem
+
+zha:
+  enable_quirks: true
+  custom_quirks_path: /config/custom_zha_quirks/
+
+lovelace: !include lovelace/lovelace.yaml
+frontend: !include frontend.yaml
+automation: !include automations.yaml
+script: !include scripts.yaml
+scene: !include scenes.yaml
