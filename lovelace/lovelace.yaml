@@ -1,0 +1,10 @@
+mode: yaml
+resources: !include resources.yaml
+dashboards:
+  lovelace-mobile:
+    mode: yaml
+    filename: /config/lovelace/dashboards/mobile.yaml
+    title: "Mobil"
+    icon: mdi:cellphone
+    show_in_sidebar: true
+    require_admin: false

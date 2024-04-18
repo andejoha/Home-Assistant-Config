@@ -2,6 +2,7 @@
 # An * ensures that everything will be ignored.
 *
 # You can whitelist files/folders with !, these will not be ignored.
+!/*
 !*.yaml
 !.gitignore
 !*.md
@@ -15,3 +16,8 @@
 ip_bans.yaml
 secrets.yaml
 known_devices.yaml
+
+# Other files to ignore
+*.log*
+*.db*
+.HA_VERSION
