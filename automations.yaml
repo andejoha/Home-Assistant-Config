@@ -162,6 +162,12 @@
   - condition: state
     entity_id: binary_sensor.stuelys
     state: 'on'
+  - condition: not
+    conditions:
+    - condition: state
+      entity_id: media_player.melina_2
+      attribute: app_name
+      state: com.spotify.tv.android
   action:
   - service: scene.turn_on
     data:
