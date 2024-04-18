@@ -115,6 +115,36 @@
       friendly_name: Stue lys
       supported_features: 40
       state: 'off'
+    light.led_list_soverom_lys:
+      min_color_temp_kelvin: 2222
+      max_color_temp_kelvin: 6250
+      min_mireds: 160
+      max_mireds: 450
+      effect_list:
+      - colorloop
+      supported_color_modes:
+      - color_temp
+      - xy
+      effect:
+      color_mode: color_temp
+      brightness: 26
+      color_temp_kelvin: 3571
+      color_temp: 280
+      hs_color:
+      - 27.105
+      - 43.253
+      rgb_color:
+      - 255
+      - 194
+      - 144
+      xy_color:
+      - 0.449
+      - 0.373
+      off_with_transition: false
+      off_brightness:
+      friendly_name: LED-list soverom Lys
+      supported_features: 44
+      state: 'on'
   icon: mdi:lightbulb-night
   metadata:
     light.taklampe_soverom_light:
@@ -124,6 +154,8 @@
     light.dresden_elektronik_conbee_ii_taklampe_entre:
       entity_only: true
     light.dresden_elektronik_conbee_ii_stue_lys:
+      entity_only: true
+    light.led_list_soverom_lys:
       entity_only: true
 - id: '1695124737748'
   name: Normal gang lys
@@ -204,10 +236,7 @@
       supported_color_modes:
       - color_temp
       - xy
-      off_with_transition: false
-      off_brightness:
-      friendly_name: Taklampe Soverom Light
-      supported_features: 44
+      effect:
       color_mode: color_temp
       brightness: 191
       color_temp_kelvin: 3039
@@ -222,10 +251,46 @@
       xy_color:
       - 0.493
       - 0.382
+      off_with_transition: false
+      off_brightness:
+      friendly_name: Taklampe Soverom Light
+      supported_features: 44
+      state: 'on'
+    light.led_list_soverom_lys:
+      min_color_temp_kelvin: 2222
+      max_color_temp_kelvin: 6250
+      min_mireds: 160
+      max_mireds: 450
+      effect_list:
+      - colorloop
+      supported_color_modes:
+      - color_temp
+      - xy
+      effect:
+      color_mode: color_temp
+      brightness: 191
+      color_temp_kelvin: 3571
+      color_temp: 280
+      hs_color:
+      - 27.105
+      - 43.253
+      rgb_color:
+      - 255
+      - 194
+      - 144
+      xy_color:
+      - 0.449
+      - 0.373
+      off_with_transition: false
+      off_brightness:
+      friendly_name: LED-list soverom Lys
+      supported_features: 44
       state: 'on'
   icon: mdi:bed-king
   metadata:
     light.taklampe_soverom_light:
+      entity_only: true
+    light.led_list_soverom_lys:
       entity_only: true
 - id: '1695214423463'
   name: Filmlys

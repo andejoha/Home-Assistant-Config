@@ -225,16 +225,12 @@ soveromlys:
       state: 'off'
     then:
     - service: scene.turn_on
-      data:
-        transition: 2
       target:
         entity_id: scene.normal_soverom_lys
     else:
     - service: light.turn_off
-      data:
-        transition: 2
       target:
-        entity_id: light.taklampe_soverom_light
+        entity_id: light.dresden_elektronik_conbee_ii_soverom_lys
   mode: single
   icon: mdi:bed-king
 entrelys:
@@ -246,14 +242,10 @@ entrelys:
       state: 'off'
     then:
     - service: scene.turn_on
-      data:
-        transition: 2
       target:
         entity_id: scene.normal_entre_lys
     else:
     - service: light.turn_off
-      data:
-        transition: 2
       target:
         entity_id: light.dresden_elektronik_conbee_ii_taklampe_entre
   mode: single
@@ -267,14 +259,10 @@ ganglys:
       state: 'off'
     then:
     - service: scene.turn_on
-      data:
-        transition: 2
       target:
         entity_id: scene.normal_gang_lys
     else:
     - service: light.turn_off
-      data:
-        transition: 2
       target:
         entity_id: light.dresden_elektronik_conbee_ii_taklampe_gang
   mode: single
