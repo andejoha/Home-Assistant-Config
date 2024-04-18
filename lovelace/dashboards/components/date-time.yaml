@@ -1,0 +1,13 @@
+type: custom:mushroom-title-card
+title: >-
+  {% set norwegianWeekdays = ["Man", "Tir", "Ons", "Tor", "Fre", "Lør", "Søn" ]
+  %}
+
+  {% set norwegianMonths = ["Jan", "Feb", "Mar", "Apr", "Mai", "Jun", "Jul",
+  "Aug", "Sep", "Okt", "Nov" "Des"] %}
+
+  {{ norwegianWeekdays[now().weekday()] }} {{ now().day }}. {{
+  norwegianMonths[now().month - 1] }}
+subtitle: '{{ now().strftime("%H:%M") }}'
+alignment: center
+card_mod: !include ../styles/date-time.yaml

@@ -1,0 +1,16 @@
+title: Soverom
+path: soverom
+icon: mdi:bed-king
+subview: true
+cards:
+  - type: vertical-stack
+    cards:
+      - !include ../components/menu-bar.yaml
+      - !include ../../titles/climate.yaml
+      - !include ../components/rooms/bedroom-climate.yaml
+      - !include ../../titles/lights.yaml
+      - !include ../../cards/lights/bedroom-light.yaml
+      - !include ../../titles/devices.yaml
+      - !include ../../cards/curtains/bedrooom-blind.yaml
+      - !include ../../titles/automations.yaml
+      - !include ../../cards/automations/wake-up.yaml

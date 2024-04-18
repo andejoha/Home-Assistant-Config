@@ -1,0 +1,8 @@
+type: custom:mushroom-vacuum-card
+entity: vacuum.gjert
+icon_animation: true
+fill_container: false
+commands:
+  - start_pause
+  - stop
+  - return_home

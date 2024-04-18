@@ -1,0 +1,22 @@
+type: custom:mushroom-template-card
+icon: |-
+  {% if is_state('binary_sensor.nattlys', 'on') %}
+    mdi:lightbulb-night
+  {% else %}
+    mdi:lightbulb-night-outline
+  {% endif %}
+icon_color: |-
+  {% if is_state('binary_sensor.nattlys', 'on') %}
+    blue
+  {% else %}
+    white
+  {% endif %}
+layout: vertical
+tap_action:
+  action: call-service
+  service: automation.trigger
+  target:
+    entity_id: automation.nattlys
+  data:
+    skip_condition: true
+card_mod: !include ../styles/transparent-background.yaml

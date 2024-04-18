@@ -1,0 +1,39 @@
+type: custom:stack-in-card
+mode: vertical
+cards:
+  - type: custom:mushroom-template-card
+    primary: Soverom
+    secondary: "{{ states('sensor.lumi_lumi_weather_temperature') }} °C"
+    icon: |
+      {% if is_state('light.taklampe_soverom_light', 'on') %}
+        mdi:lightbulb
+      {% else %}
+        mdi:lightbulb-outline
+      {% endif %}
+    tap_action:
+      action: call-service
+      service: script.soveromlys
+    hold_action:
+      navigation_path: /lovelace-mobile/soverom
+      action: navigate
+    icon_color: |2-
+        {% if is_state('light.taklampe_soverom_light', 'on') %}
+          amber
+        {% endif %}
+    entity: light.taklampe_soverom_light
+
+  - type: custom:mini-graph-card
+    entities:
+      - sensor.lumi_lumi_weather_temperature
+    show:
+      state: false
+      name: false
+      icon: false
+      labels: false
+      points: false
+    points_per_hour: 2
+    hours_to_show: 24
+    color_thresholds: !include ../../../graphs/temperature-thresholds.yaml
+    tap_action:
+      action: navigate
+      navigation_path: /lovelace-mobile/soverom

@@ -1,0 +1,14 @@
+title: stue
+path: stue
+icon: mdi:bed-king
+subview: true
+cards:
+  - type: vertical-stack
+    cards:
+      - !include ../components/menu-bar.yaml
+      - !include ../../titles/climate.yaml
+      - !include ../components/rooms/living-room-climate.yaml
+      - !include ../../titles/lights.yaml
+      - !include ../../cards/lights/living-room-lights.yaml
+      - !include ../../titles/devices.yaml
+      - !include ../../cards/devices/vacuum.yaml

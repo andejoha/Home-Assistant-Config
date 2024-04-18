@@ -1,0 +1,9 @@
+title: Hjem
+cards:
+  - type: vertical-stack
+    cards:
+      - !include ../components/menu-bar.yaml
+      - !include ../components/date-time.yaml
+      - !include ../components/people.yaml
+      - !include ../components/functions-bar.yaml
+      - !include ../components/rooms.yaml

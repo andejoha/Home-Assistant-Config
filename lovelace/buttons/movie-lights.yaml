@@ -1,0 +1,18 @@
+type: custom:mushroom-template-card
+icon: |-
+  {% if is_state('binary_sensor.filmlys', 'on') %}
+    mdi:movie-open
+  {% else %}
+    mdi:movie-open-outline
+  {% endif %}
+icon_color: |-
+  {% if is_state('binary_sensor.filmlys', 'on') %}
+    purple
+  {% else %}
+    white
+  {% endif %}
+layout: vertical
+tap_action:
+  action: call-service
+  service: script.filmlys
+card_mod: !include ../styles/transparent-background.yaml

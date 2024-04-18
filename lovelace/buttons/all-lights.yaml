@@ -1,0 +1,22 @@
+type: custom:mushroom-template-card
+icon: |-
+  {% if is_state('light.unk_manufacturer_unk_model_alle_lys', 'on') %}
+    mdi:lightbulb-group
+  {% else %}
+    mdi:lightbulb-group-outline
+  {% endif %}
+icon_color: |-
+  {% if is_state('light.unk_manufacturer_unk_model_alle_lys', 'on') %}
+    amber
+  {% else %}
+    white
+  {% endif %}
+layout: vertical
+tap_action:
+  action: call-service
+  service: automation.trigger
+  target:
+    entity_id: automation.alle_lys
+  data:
+    skip_condition: true
+card_mod: !include ../styles/transparent-background.yaml

@@ -1,0 +1,38 @@
+type: custom:stack-in-card
+mode: vertical
+cards:
+  - type: custom:mushroom-template-card
+    primary: Stue
+    secondary: "{{ states('sensor.lumi_lumi_weather_temperature_2') }} °C"
+    icon: |
+      {% if is_state('light.dresden_elektronik_conbee_ii_stue_lys', 'on') %}
+        mdi:lightbulb
+      {% else %}
+        mdi:lightbulb-outline
+      {% endif %}
+    tap_action:
+      action: call-service
+      service: script.stuelys
+    hold_action:
+      action: navigate
+      navigation_path: /lovelace-mobile/stue
+    icon_color: |2-
+        {% if is_state('light.dresden_elektronik_conbee_ii_stue_lys', 'on') %}
+          amber
+        {% endif %}
+
+  - type: custom:mini-graph-card
+    entities:
+      - sensor.lumi_lumi_weather_temperature_2
+    show:
+      state: false
+      name: false
+      icon: false
+      labels: false
+      points: false
+    points_per_hour: 2
+    hours_to_show: 24
+    color_thresholds: !include ../../../graphs/temperature-thresholds.yaml
+    tap_action:
+      action: navigate
+      navigation_path: /lovelace-mobile/stue

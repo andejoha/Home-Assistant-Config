@@ -1,0 +1,6 @@
+type: custom:mushroom-person-card
+entity: person.anders
+icon_type: entity-picture
+layout: vertical
+fill_container: false
+card_mod: !include ../styles/transparent-background.yaml

@@ -1,0 +1,12 @@
+title: Entre
+path: entre
+icon: mdi:coat-rack
+subview: true
+cards:
+  - type: vertical-stack
+    cards:
+      - !include ../components/menu-bar.yaml
+      - !include ../../titles/climate.yaml
+      - !include ../components/rooms/entrance-climate.yaml
+      - !include ../../titles/lights.yaml
+      - !include ../../cards/lights/entrance-light.yaml

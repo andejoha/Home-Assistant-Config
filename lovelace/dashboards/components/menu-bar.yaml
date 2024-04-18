@@ -1,0 +1,11 @@
+type: custom:mushroom-chips-card
+chips:
+  - type: back
+  - type: spacer
+  - type: weather
+    entity: weather.forecast_hjem
+    show_temperature: true
+    show_conditions: false
+  - type: spacer
+  - type: menu
+alignment: justify

@@ -1,0 +1,10 @@
+background: var(--background-image)
+title: "Mobil"
+kiosk_mode:
+  hide_header: true
+views:
+  - !include views/home.yaml
+  - !include views/bedroom.yaml
+  - !include views/living-room.yaml
+  - !include views/kitchen.yaml
+  - !include views/entrance.yaml

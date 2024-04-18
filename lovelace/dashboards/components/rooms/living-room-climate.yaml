@@ -1,0 +1,4 @@
+type: horizontal-stack
+cards:
+  - !include ../../../graphs/living-room-temperature.yaml
+  - !include ../../../graphs/living-room-humidity.yaml

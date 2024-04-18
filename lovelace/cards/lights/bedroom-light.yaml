@@ -1,0 +1,13 @@
+type: horizontal-stack
+cards:
+  - type: custom:mushroom-light-card
+    entity: light.taklampe_soverom_light
+    name: Taklampe
+    use_light_color: true
+    show_brightness_control: true
+
+  - type: custom:mushroom-light-card
+    entity: light.led_list_soverom_lys
+    name: LED-list
+    use_light_colo: true
+    show_brightness_control: true

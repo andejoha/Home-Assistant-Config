@@ -1,0 +1,21 @@
+type: custom:mushroom-template-card
+primary: "{{ state_attr('automation.oppvakning', 'friendly_name') }}"
+secondary: |-
+  {% if is_state('automation.oppvakning', 'on') %}
+    På
+  {% else %}
+    Av
+  {% endif %}
+icon: |-
+  {% if is_state('automation.oppvakning', 'on') %}
+    mdi:sleep
+  {% else %}
+    mdi:sleep-off
+  {% endif %}
+entity: automation.oppvakning
+icon_color: |-
+  {% if is_state('automation.oppvakning', 'on') %}
+    green
+  {% endif %}
+tap_action:
+  action: toggle

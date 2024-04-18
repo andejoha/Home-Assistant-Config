@@ -1,0 +1,51 @@
+type: horizontal-stack
+cards:
+  - type: custom:mushroom-template-card
+    primary: Kjøleskap
+    secondary: |-
+      {% if is_state('binary_sensor.lumi_lumi_sensor_magnet_aq2_opening', 'on') %}
+        Åpen
+      {% else %}
+        Lukket
+      {% endif %}
+    icon: |-
+      {% if is_state('binary_sensor.lumi_lumi_sensor_magnet_aq2_opening', 'on') %}
+        mdi:door-open
+      {% else %}
+        mdi:door-closed
+      {% endif %}
+    icon_color: |-
+      {% if is_state('binary_sensor.lumi_lumi_sensor_magnet_aq2_opening', 'on') %}
+        blue
+      {% endif %}
+    tap_action:
+      action: none
+    hold_action:
+      action: none
+    double_tap_action:
+      action: none
+
+  - type: custom:mushroom-template-card
+    primary: Fryseskap
+    secondary: |-
+      {% if is_state('binary_sensor.lumi_lumi_sensor_magnet_aq2_opening_2', 'on') %}
+        Åpen
+      {% else %}
+        Lukket
+      {% endif %}
+    icon: |-
+      {% if is_state('binary_sensor.lumi_lumi_sensor_magnet_aq2_opening_2', 'on') %}
+        mdi:door-open
+      {% else %}
+        mdi:door-closed
+      {% endif %}
+    icon_color: |-
+      {% if is_state('binary_sensor.lumi_lumi_sensor_magnet_aq2_opening_2', 'on') %}
+        blue
+      {% endif %}
+    tap_action:
+      action: none
+    hold_action:
+      action: none
+    double_tap_action:
+      action: none

@@ -1,0 +1,5 @@
+type: horizontal-stack
+cards:
+  - !include ../../buttons/movie-lights.yaml
+  - !include ../../buttons/all-lights.yaml
+  - !include ../../buttons/night-light.yaml

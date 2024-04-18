@@ -1,0 +1,12 @@
+type: custom:mini-graph-card
+entities:
+  - entity: sensor.lumi_lumi_weather_temperature_3
+    name: Temperatur
+show:
+  labels: false
+  extrema: true
+align_state: center
+points_per_hour: 2
+hours_to_show: 24
+color_thresholds: !include temperature-thresholds.yaml
+hour24: true

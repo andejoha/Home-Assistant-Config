@@ -1,0 +1,13 @@
+type: horizontal-stack
+cards:
+  - type: custom:mushroom-light-card
+    entity: light.taklampe_stue_light
+    name: Taklampe
+    use_light_color: true
+    show_brightness_control: true
+
+  - type: custom:mushroom-light-card
+    entity: light.lampe_stue_light
+    name: Taklampe
+    use_light_color: true
+    show_brightness_control: true

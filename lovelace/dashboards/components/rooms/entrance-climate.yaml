@@ -1,0 +1,4 @@
+type: horizontal-stack
+cards:
+  - !include ../../../graphs/entrance-temperature.yaml
+  - !include ../../../graphs/entrance-humidity.yaml

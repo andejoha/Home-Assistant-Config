@@ -1,0 +1,3 @@
+type: horizontal-stack
+cards:
+  - !include ../../people/anders.yaml
