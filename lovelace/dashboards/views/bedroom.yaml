@@ -14,3 +14,5 @@ cards:
       - !include ../../cards/curtains/bedrooom-blind.yaml
       - !include ../../titles/automations.yaml
       - !include ../../cards/automations/wake-up.yaml
+      - !include ../../titles/scenes.yaml
+      - !include ../../cards/scenes/bedroom-scenes.yaml

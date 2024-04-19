@@ -317,3 +317,40 @@
       state: 'on'
   icon: mdi:movie-open
   metadata: {}
+- id: '1713525849826'
+  name: Horelys
+  entities:
+    light.dresden_elektronik_conbee_ii_soverom_lys:
+      min_color_temp_kelvin: 2202
+      max_color_temp_kelvin: 6250
+      min_mireds: 160
+      max_mireds: 454
+      effect_list:
+      - colorloop
+      supported_color_modes:
+      - color_temp
+      - xy
+      effect:
+      color_mode: xy
+      brightness: 191
+      color_temp_kelvin:
+      color_temp:
+      hs_color:
+      - 330.612
+      - 57.647
+      rgb_color:
+      - 255
+      - 108
+      - 180
+      xy_color:
+      - 0.469993
+      - 0.24799
+      off_with_transition: false
+      off_brightness:
+      friendly_name: dresden elektronik Conbee II Soverom lys
+      supported_features: 44
+      state: 'on'
+  metadata:
+    light.dresden_elektronik_conbee_ii_soverom_lys:
+      entity_only: true
+  icon: mdi:creation
