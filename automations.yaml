@@ -19,7 +19,7 @@
     data:
       brightness_pct: 25
     target:
-      entity_id: light.taklampe_soverom_light
+      entity_id: light.dresden_elektronik_conbee_ii_soverom_lys
   - delay:
       hours: 0
       minutes: 10
@@ -29,7 +29,7 @@
     data:
       brightness_pct: 50
     target:
-      entity_id: light.taklampe_soverom_light
+      entity_id: light.dresden_elektronik_conbee_ii_soverom_lys
   - delay:
       hours: 0
       minutes: 10
@@ -39,7 +39,7 @@
     data:
       brightness_pct: 75
     target:
-      entity_id: light.taklampe_soverom_light
+      entity_id: light.dresden_elektronik_conbee_ii_soverom_lys
   - delay:
       hours: 0
       minutes: 10
@@ -49,7 +49,7 @@
     data:
       brightness_pct: 100
     target:
-      entity_id: light.taklampe_soverom_light
+      entity_id: light.dresden_elektronik_conbee_ii_soverom_lys
   - service: scene.turn_on
     data: {}
     target:
@@ -65,7 +65,7 @@
     data: {}
     target:
       entity_id:
-      - light.taklampe_soverom_light
+      - light.dresden_elektronik_conbee_ii_soverom_lys
       - light.dresden_elektronik_conbee_ii_taklampe_entre
       - light.dresden_elektronik_conbee_ii_taklampe_gang
   mode: single
@@ -236,7 +236,7 @@
       transition: 300
       brightness_pct: 25
     target:
-      entity_id: light.taklampe_soverom_light
+      entity_id: light.dresden_elektronik_conbee_ii_soverom_lys
   - delay:
       hours: 0
       minutes: 10
@@ -247,7 +247,7 @@
       transition: 300
       brightness_pct: 50
     target:
-      entity_id: light.taklampe_soverom_light
+      entity_id: light.dresden_elektronik_conbee_ii_soverom_lys
   - delay:
       hours: 0
       minutes: 10
@@ -258,7 +258,7 @@
       transition: 300
       brightness_pct: 75
     target:
-      entity_id: light.taklampe_soverom_light
+      entity_id: light.dresden_elektronik_conbee_ii_soverom_lys
   - delay:
       hours: 0
       minutes: 10
@@ -269,7 +269,7 @@
       transition: 300
       brightness_pct: 100
     target:
-      entity_id: light.taklampe_soverom_light
+      entity_id: light.dresden_elektronik_conbee_ii_soverom_lys
   - service: scene.turn_on
     data: {}
     target:
@@ -285,7 +285,7 @@
     data: {}
     target:
       entity_id:
-      - light.taklampe_soverom_light
+      - light.dresden_elektronik_conbee_ii_soverom_lys
       - light.dresden_elektronik_conbee_ii_taklampe_entre
       - light.dresden_elektronik_conbee_ii_taklampe_gang
   mode: single
