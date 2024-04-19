@@ -358,5 +358,5 @@
     - service: light.turn_off
       data: {}
       target:
-        entity_id: light.taklampe_soverom_light
+        entity_id: light.dresden_elektronik_conbee_ii_soverom_lys
   mode: single
