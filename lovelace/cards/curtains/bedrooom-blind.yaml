@@ -2,3 +2,4 @@ type: custom:mushroom-cover-card
 entity: cover.gardin_soverom_cover
 name: Gardin
 show_buttons_control: true
+show_position_control: true
