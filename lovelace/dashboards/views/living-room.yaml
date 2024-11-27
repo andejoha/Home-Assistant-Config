@@ -12,3 +12,5 @@ cards:
       - !include ../../cards/lights/living-room-lights.yaml
       - !include ../../titles/devices.yaml
       - !include ../../cards/devices/vacuum.yaml
+      - !include ../../titles/automations.yaml
+      - !include ../../cards/automations/turn-on-movie-light.yaml

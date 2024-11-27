@@ -79,17 +79,17 @@
     event: leave
   condition: []
   action:
-  - service: light.turn_off
-    data: {}
+  - data: {}
     target:
       entity_id: light.unk_manufacturer_unk_model_alle_lys
-  - service: media_player.turn_off
-    data: {}
+    action: light.turn_off
+  - data: {}
     target:
       entity_id:
       - media_player.melina_2
-      - media_player.melina
       - media_player.stue
+      - media_player.melina_4
+    action: media_player.turn_off
   mode: single
 - id: '1695112118552'
   alias: Nattlys
@@ -156,7 +156,7 @@
   trigger:
   - platform: state
     entity_id:
-    - media_player.melina
+    - media_player.melina_4
     to: playing
   condition:
   - condition: state
@@ -165,15 +165,15 @@
   - condition: not
     conditions:
     - condition: state
-      entity_id: media_player.melina_2
+      entity_id: media_player.melina_4
       attribute: app_name
       state: com.spotify.tv.android
   action:
-  - service: scene.turn_on
-    data:
+  - data:
       transition: 2
     target:
       entity_id: scene.filmlys
+    action: scene.turn_on
   mode: single
 - id: '1695326594430'
   alias: Slå av filmlys
@@ -181,18 +181,18 @@
   trigger:
   - platform: state
     entity_id:
-    - media_player.melina
+    - media_player.melina_4
     from: playing
   condition:
   - condition: state
     entity_id: binary_sensor.filmlys
     state: 'on'
   action:
-  - service: scene.turn_on
-    data:
+  - data:
       transition: 2
     target:
       entity_id: scene.normal_stue_lys
+    action: scene.turn_on
   mode: single
 - id: '1695395763989'
   alias: Åpen kjøleskapsdør

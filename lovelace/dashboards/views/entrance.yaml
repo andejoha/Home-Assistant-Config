@@ -10,3 +10,5 @@ cards:
       - !include ../components/rooms/entrance-climate.yaml
       - !include ../../titles/lights.yaml
       - !include ../../cards/lights/entrance-light.yaml
+      - !include ../../titles/automations.yaml
+      - !include ../../cards/automations/leave-home.yaml

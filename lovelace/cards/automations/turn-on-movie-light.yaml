@@ -1,0 +1,21 @@
+type: custom:mushroom-template-card
+primary: "{{ state_attr('automation.sla_pa_filmlys', 'friendly_name') }}"
+secondary: |-
+  {% if is_state('automation.sla_pa_filmlys', 'on') %}
+    På
+  {% else %}
+    Av
+  {% endif %}
+icon: |-
+  {% if is_state('automation.sla_pa_filmlys', 'on') %}
+    mdi:movie-open
+  {% else %}
+    mdi:movie-open-off-outline
+  {% endif %}
+entity: automation.sla_pa_filmlys
+icon_color: |-
+  {% if is_state('automation.sla_pa_filmlys', 'on') %}
+    green
+  {% endif %}
+tap_action:
+  action: toggle

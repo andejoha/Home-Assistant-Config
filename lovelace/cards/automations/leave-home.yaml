@@ -1,0 +1,21 @@
+type: custom:mushroom-template-card
+primary: "{{ state_attr('automation.drar_hjemmefra', 'friendly_name') }}"
+secondary: |-
+  {% if is_state('automation.drar_hjemmefra', 'on') %}
+    På
+  {% else %}
+    Av
+  {% endif %}
+icon: |-
+  {% if is_state('automation.drar_hjemmefra', 'on') %}
+    mdi:home-off
+  {% else %}
+    mdi:home-off-outline
+  {% endif %}
+entity: automation.drar_hjemmefra
+icon_color: |-
+  {% if is_state('automation.drar_hjemmefra', 'on') %}
+    green
+  {% endif %}
+tap_action:
+  action: toggle
