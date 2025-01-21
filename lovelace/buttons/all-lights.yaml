@@ -1,12 +1,12 @@
 type: custom:mushroom-template-card
 icon: |-
-  {% if is_state('light.unk_manufacturer_unk_model_alle_lys', 'on') %}
+  {% if is_state('light.alle_lys', 'on') %}
     mdi:lightbulb-group
   {% else %}
     mdi:lightbulb-group-outline
   {% endif %}
 icon_color: |-
-  {% if is_state('light.unk_manufacturer_unk_model_alle_lys', 'on') %}
+  {% if is_state('light.alle_lys', 'on') %}
     amber
   {% else %}
     white

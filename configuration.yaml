@@ -1,9 +1,9 @@
 # Loads default set of integrations. Do not remove.
 default_config:
 
-http:
-  ssl_certificate: /ssl/fullchain.pem
-  ssl_key: /ssl/privkey.pem
+# http:
+#   ssl_certificate: /ssl/fullchain.pem
+#   ssl_key: /ssl/privkey.pem
 
 zha:
   enable_quirks: true

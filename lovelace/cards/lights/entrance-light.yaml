@@ -1,5 +1,5 @@
 type: custom:mushroom-light-card
-entity: light.dresden_elektronik_conbee_ii_taklampe_entre
+entity: light.taklampe_entre
 name: Taklampe
 use_light_color: true
 show_brightness_control: true

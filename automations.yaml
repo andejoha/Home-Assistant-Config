@@ -1,11 +1,11 @@
 - id: '1693774367487'
   alias: Oppvåkning
   description: ''
-  trigger:
-  - platform: time
-    at: 05:30:00
+  triggers:
+  - at: 05:30:00
     enabled: true
-  condition:
+    trigger: time
+  conditions:
   - condition: time
     weekday:
     - mon
@@ -14,60 +14,60 @@
     - thu
     - fri
     enabled: true
-  action:
-  - service: light.turn_on
-    data:
+  actions:
+  - data:
       brightness_pct: 25
     target:
-      entity_id: light.dresden_elektronik_conbee_ii_soverom_lys
+      entity_id: light.soverom_lys
+    action: light.turn_on
   - delay:
       hours: 0
       minutes: 10
       seconds: 0
       milliseconds: 0
-  - service: light.turn_on
-    data:
+  - data:
       brightness_pct: 50
     target:
-      entity_id: light.dresden_elektronik_conbee_ii_soverom_lys
+      entity_id: light.soverom_lys
+    action: light.turn_on
   - delay:
       hours: 0
       minutes: 10
       seconds: 0
       milliseconds: 0
-  - service: light.turn_on
-    data:
+  - data:
       brightness_pct: 75
     target:
-      entity_id: light.dresden_elektronik_conbee_ii_soverom_lys
+      entity_id: light.soverom_lys
+    action: light.turn_on
   - delay:
       hours: 0
       minutes: 10
       seconds: 0
       milliseconds: 0
-  - service: light.turn_on
-    data:
+  - data:
       brightness_pct: 100
     target:
-      entity_id: light.dresden_elektronik_conbee_ii_soverom_lys
-  - service: scene.turn_on
-    data: {}
+      entity_id: light.soverom_lys
+    action: light.turn_on
+  - data: {}
     target:
       entity_id:
       - scene.normal_entre_lys
       - scene.normal_gang_lys
+    action: scene.turn_on
   - delay:
       hours: 2
       minutes: 0
       seconds: 0
       milliseconds: 0
-  - service: light.turn_off
-    data: {}
+  - data: {}
     target:
       entity_id:
-      - light.dresden_elektronik_conbee_ii_soverom_lys
-      - light.dresden_elektronik_conbee_ii_taklampe_entre
-      - light.dresden_elektronik_conbee_ii_taklampe_gang
+      - light.soverom_lys
+      - light.taklampe_entre
+      - light.taklampe_gang
+    action: light.turn_off
   mode: single
 - id: '1693889737574'
   alias: Drar hjemmefra
@@ -81,41 +81,42 @@
   action:
   - data: {}
     target:
-      entity_id: light.unk_manufacturer_unk_model_alle_lys
+      entity_id: light.alle_lys
     action: light.turn_off
   - data: {}
     target:
       entity_id:
-      - media_player.melina_2
+      - media_player.melina
       - media_player.stue
-      - media_player.melina_4
+      - media_player.melina_2
     action: media_player.turn_off
   mode: single
 - id: '1695112118552'
   alias: Nattlys
   description: ''
-  trigger:
-  - device_id: 2f2a2e2b8a389197a2c82cfdc15c40b3
+  triggers:
+  - device_id: d3c4ab4b39d5788d4a79ec1bdeb2f2ac
     domain: zha
-    platform: device
     type: remote_button_short_press
     subtype: turn_on
-  condition: []
-  action:
+    trigger: device
+  conditions: []
+  actions:
   - if:
     - condition: state
       entity_id: binary_sensor.nattlys
       state: 'off'
     then:
-    - service: scene.turn_on
-      target:
+    - target:
         entity_id: scene.nattlys
       metadata: {}
-    else:
-    - service: light.turn_off
+      action: scene.turn_on
       data: {}
+    else:
+    - data: {}
       target:
-        entity_id: light.unk_manufacturer_unk_model_alle_lys
+        entity_id: light.alle_lys
+      action: light.turn_off
   mode: single
 - id: '1695139713739'
   alias: Alle lys
@@ -125,7 +126,7 @@
   action:
   - if:
     - condition: state
-      entity_id: light.unk_manufacturer_unk_model_alle_lys
+      entity_id: light.alle_lys
       state: 'off'
     then:
     - service: scene.turn_on
@@ -148,7 +149,7 @@
     - service: light.turn_off
       data: {}
       target:
-        entity_id: light.unk_manufacturer_unk_model_alle_lys
+        entity_id: light.alle_lys
   mode: single
 - id: '1695326503541'
   alias: Slå på filmlys
@@ -156,7 +157,7 @@
   trigger:
   - platform: state
     entity_id:
-    - media_player.melina_4
+    - media_player.melina
     to: playing
   condition:
   - condition: state
@@ -165,7 +166,7 @@
   - condition: not
     conditions:
     - condition: state
-      entity_id: media_player.melina_4
+      entity_id: media_player.melina_2
       attribute: app_name
       state: com.spotify.tv.android
   action:
@@ -181,7 +182,7 @@
   trigger:
   - platform: state
     entity_id:
-    - media_player.melina_4
+    - media_player.melina
     from: playing
   condition:
   - condition: state
@@ -200,7 +201,7 @@
   trigger:
   - platform: state
     entity_id:
-    - binary_sensor.lumi_lumi_sensor_magnet_aq2_opening
+    - binary_sensor.kjoleskapsdorsensor_apning
     from: 'off'
     to: 'on'
   condition: []
@@ -214,7 +215,7 @@
   trigger:
   - platform: state
     entity_id:
-    - binary_sensor.lumi_lumi_sensor_magnet_aq2_opening_2
+    - binary_sensor.fryseskapsdorsensor_apning
     from: 'off'
     to: 'on'
   condition: []
@@ -225,138 +226,143 @@
 - id: '1699814369938'
   alias: Manuell oppvåkning
   description: ''
-  trigger:
-  - platform: time
-    at: 03:00:00
+  triggers:
+  - at: 07:30:00
     enabled: true
-  condition: []
-  action:
-  - service: light.turn_on
-    data:
+    trigger: time
+  conditions: []
+  actions:
+  - data:
       transition: 300
       brightness_pct: 25
     target:
-      entity_id: light.dresden_elektronik_conbee_ii_soverom_lys
+      entity_id: light.soverom_lys
+    action: light.turn_on
   - delay:
       hours: 0
       minutes: 10
       seconds: 0
       milliseconds: 0
-  - service: light.turn_on
-    data:
+  - data:
       transition: 300
       brightness_pct: 50
     target:
-      entity_id: light.dresden_elektronik_conbee_ii_soverom_lys
+      entity_id: light.soverom_lys
+    action: light.turn_on
   - delay:
       hours: 0
       minutes: 10
       seconds: 0
       milliseconds: 0
-  - service: light.turn_on
-    data:
+  - data:
       transition: 300
       brightness_pct: 75
     target:
-      entity_id: light.dresden_elektronik_conbee_ii_soverom_lys
+      entity_id: light.soverom_lys
+    action: light.turn_on
   - delay:
       hours: 0
       minutes: 10
       seconds: 0
       milliseconds: 0
-  - service: light.turn_on
-    data:
+  - data:
       transition: 300
       brightness_pct: 100
     target:
-      entity_id: light.dresden_elektronik_conbee_ii_soverom_lys
-  - service: scene.turn_on
-    data: {}
+      entity_id: light.soverom_lys
+    action: light.turn_on
+  - data: {}
     target:
       entity_id:
       - scene.normal_entre_lys
       - scene.normal_gang_lys
+    action: scene.turn_on
   - delay:
       hours: 2
       minutes: 0
       seconds: 0
       milliseconds: 0
-  - service: light.turn_off
-    data: {}
+  - data: {}
     target:
       entity_id:
-      - light.dresden_elektronik_conbee_ii_soverom_lys
-      - light.dresden_elektronik_conbee_ii_taklampe_entre
-      - light.dresden_elektronik_conbee_ii_taklampe_gang
+      - light.soverom_lys
+      - light.taklampe_entre
+      - light.taklampe_gang
+    action: light.turn_off
   mode: single
 - id: '1704641582142'
   alias: Slå på alle lys
   description: ''
-  trigger:
-  - device_id: 0d3b4fb40232b227b43de5b6d17e6ea2
+  triggers:
+  - device_id: db7cc31bffcbed23d9852e5f2f6cdc22
     domain: zha
-    platform: device
     type: remote_button_short_press
     subtype: button_1
-  condition: []
-  action:
-  - service: scene.turn_on
-    metadata: {}
+    trigger: device
+  conditions: []
+  actions:
+  - metadata: {}
     target:
       entity_id: scene.normal_entre_lys
-  - service: scene.turn_on
-    metadata: {}
+    action: scene.turn_on
+    data: {}
+  - metadata: {}
     target:
       entity_id: scene.normal_gang_lys
-  - service: scene.turn_on
-    metadata: {}
+    action: scene.turn_on
+    data: {}
+  - metadata: {}
     target:
       entity_id: scene.normal_stue_lys
-  - service: scene.turn_on
-    metadata: {}
+    action: scene.turn_on
+    data: {}
+  - metadata: {}
     target:
       entity_id: scene.normal_soverom_lys
+    action: scene.turn_on
+    data: {}
   mode: single
 - id: '1704641616888'
   alias: Slå av alle lys
   description: ''
-  trigger:
-  - device_id: 0d3b4fb40232b227b43de5b6d17e6ea2
+  triggers:
+  - device_id: db7cc31bffcbed23d9852e5f2f6cdc22
     domain: zha
-    platform: device
     type: remote_button_short_press
     subtype: button_2
-  condition: []
-  action:
-  - service: light.turn_off
-    metadata: {}
+    trigger: device
+  conditions: []
+  actions:
+  - metadata: {}
     data: {}
     target:
-      entity_id: light.unk_manufacturer_unk_model_alle_lys
+      entity_id: light.alle_lys
+    action: light.turn_off
   mode: single
 - id: '1705666507793'
   alias: Slå på soveromslys
   description: ''
-  trigger:
-  - device_id: 2f2a2e2b8a389197a2c82cfdc15c40b3
+  triggers:
+  - device_id: d3c4ab4b39d5788d4a79ec1bdeb2f2ac
     domain: zha
-    platform: device
     type: remote_button_long_press
     subtype: dim_up
-  condition: []
-  action:
+    trigger: device
+  conditions: []
+  actions:
   - if:
     - condition: state
       state: 'off'
-      entity_id: light.taklampe_soverom_light
+      entity_id: light.taklampe_soverom_lys
     then:
-    - service: scene.turn_on
-      target:
+    - target:
         entity_id: scene.normal_soverom_lys
       metadata: {}
-    else:
-    - service: light.turn_off
+      action: scene.turn_on
       data: {}
+    else:
+    - data: {}
       target:
-        entity_id: light.dresden_elektronik_conbee_ii_soverom_lys
+        entity_id: light.soverom_lys
+      action: light.turn_off
   mode: single

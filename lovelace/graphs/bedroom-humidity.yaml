@@ -1,6 +1,6 @@
 type: custom:mini-graph-card
 entities:
-  - entity: sensor.lumi_lumi_weather_humidity
+  - entity: sensor.temperatursensor_soverom_luftfuktighet
     name: Luftfuktighet
 show:
   labels: false
@@ -10,3 +10,4 @@ points_per_hour: 2
 hours_to_show: 24
 line_color: blue
 hour24: true
+

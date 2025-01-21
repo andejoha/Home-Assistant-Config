@@ -1,6 +1,6 @@
 type: custom:mini-graph-card
 entities:
-  - entity: sensor.lumi_lumi_weather_temperature
+  - entity: sensor.temperatursensor_soverom_temperatur
     name: Temperatur
 show:
   labels: false

@@ -3,9 +3,9 @@ mode: vertical
 cards:
   - type: custom:mushroom-template-card
     primary: Soverom
-    secondary: "{{ states('sensor.lumi_lumi_weather_temperature') }} °C"
+    secondary: "{{ states('sensor.temperatursensor_soverom_temperatur') }} °C"
     icon: |
-      {% if is_state('light.taklampe_soverom_light', 'on') %}
+      {% if is_state('light.taklampe_soverom_lys', 'on') %}
         mdi:lightbulb
       {% else %}
         mdi:lightbulb-outline
@@ -17,14 +17,14 @@ cards:
       navigation_path: /lovelace-mobile/soverom
       action: navigate
     icon_color: |2-
-        {% if is_state('light.taklampe_soverom_light', 'on') %}
+        {% if is_state('light.taklampe_soverom_lys', 'on') %}
           amber
         {% endif %}
-    entity: light.taklampe_soverom_light
+    entity: light.taklampe_soverom_lys
 
   - type: custom:mini-graph-card
     entities:
-      - sensor.lumi_lumi_weather_temperature
+      - sensor.temperatursensor_soverom_temperatur
     show:
       state: false
       name: false

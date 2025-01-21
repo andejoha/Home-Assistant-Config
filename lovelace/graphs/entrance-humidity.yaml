@@ -1,6 +1,6 @@
 type: custom:mini-graph-card
 entities:
-  - entity: sensor.lumi_lumi_weather_humidity_3
+  - entity: sensor.temperatursensor_entre_luftfuktighet
     name: Luftfuktighet
 show:
   labels: false

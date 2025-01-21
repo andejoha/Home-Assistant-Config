@@ -3,9 +3,9 @@ mode: vertical
 cards:
   - type: custom:mushroom-template-card
     primary: Entré
-    secondary: "{{ states('sensor.lumi_lumi_weather_temperature_3') }} °C"
+    secondary: "{{ states('sensor.temperatursensor_entre_temperatur') }} °C"
     icon: |
-      {% if is_state('light.dresden_elektronik_conbee_ii_taklampe_entre', 'on') %}
+      {% if is_state('light.taklampe_entre', 'on') %}
         mdi:lightbulb
       {% else %}
         mdi:lightbulb-outline
@@ -17,14 +17,14 @@ cards:
       action: navigate
       navigation_path: /lovelace-mobile/entre
     icon_color: |2-
-        {% if is_state('light.dresden_elektronik_conbee_ii_taklampe_entre', 'on') %}
+        {% if is_state('light.taklampe_entre', 'on') %}
           amber
         {% endif %}
-    entity: light.dresden_elektronik_conbee_ii_taklampe_entre
+    entity: light.taklampe_entre
 
   - type: custom:mini-graph-card
     entities:
-      - sensor.lumi_lumi_weather_temperature_3
+      - sensor.temperatursensor_entre_temperatur
     show:
       state: false
       name: false
