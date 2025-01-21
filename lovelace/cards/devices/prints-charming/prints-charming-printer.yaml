@@ -107,9 +107,28 @@ elements:
             type: state-badge
             style:
               font-size: 0.8em
-              top: 31%
-              left: 19%
+              top: 35%
+              left: 70%
               color: rgba(0,0,0,0)
+      - type: custom:config-template-card
+        entities:
+          - camera.prints_charming_camera
+          - switch.prints_charming_enable_camera
+          - binary_sensor.prints_charming_recording_timelapse
+        element:
+          type: state-icon
+          entity: camera.prints_charming_camera
+          icon: >-
+            ${states['switch.prints_charming_enable_camera'].state == 'on' ?
+            'mdi:video-wireless-outline' : 'mdi:video-off-outline'}
+        style:
+          top: 30%
+          left: 17%
+          rotate: 35deg
+          "--mdc-icon-size": 3em
+          "--state-camera-streaming-color": >-
+            ${states['binary_sensor.prints_charming_recording_timelapse'].state == 'on' ?
+            'red' : 'white'}
 card_mod:
   style: |
     ha-card {
