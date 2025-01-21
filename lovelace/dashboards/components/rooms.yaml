@@ -8,3 +8,6 @@ cards:
     cards:
       - !include rooms/kitchen-navigation.yaml
       - !include rooms/entrance-navigation.yaml
+  - type: horizontal-stack
+    cards:
+      - !include rooms/storage-room-navigation.yaml

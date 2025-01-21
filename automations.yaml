@@ -366,3 +366,24 @@
         entity_id: light.soverom_lys
       action: light.turn_off
   mode: single
+- id: '1737455495542'
+  alias: 3D print ferdig
+  description: ''
+  triggers:
+  - device_id: c76309f5f45801bb917a20ba42c55386
+    domain: bambu_lab
+    type: event_print_finished
+    trigger: device
+  conditions: []
+  actions:
+  - type: turn_off
+    device_id: c76309f5f45801bb917a20ba42c55386
+    entity_id: 352ef6f7c6e066e99dab82386d519b0b
+    domain: light
+  - action: notify.mobile_app_anders_sin_iphone
+    metadata: {}
+    data:
+      message: '3D printen er ferdig: {{ states(''sensor.prints_charming_task_name'')
+        }}'
+      title: Prints Charming
+  mode: single

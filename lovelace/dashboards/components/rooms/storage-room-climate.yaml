@@ -1,0 +1,4 @@
+type: horizontal-stack
+cards:
+  - !include ../../../graphs/storage-room-temperature.yaml
+  - !include ../../../graphs/storage-room-humidity.yaml

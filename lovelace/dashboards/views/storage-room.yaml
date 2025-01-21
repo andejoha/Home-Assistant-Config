@@ -1,0 +1,12 @@
+title: Bod
+path: bod
+icon: mdi:wardrobe
+subview: true
+cards:
+  - type: vertical-stack
+    cards:
+      - !include ../components/menu-bar.yaml
+      - !include ../../titles/climate.yaml
+      - !include ../components/rooms/storage-room-climate.yaml
+      - !include ../../titles/devices.yaml
+      - !include ../../cards/devices/3d-printer.yaml

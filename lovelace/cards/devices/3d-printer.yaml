@@ -1,0 +1,9 @@
+title: Prints Charming
+type: custom:layout-card
+layout_type: custom:horizontal-layout
+layout:
+  max_cols: 3
+cards:
+  - !include ./prints-charming/prints-charming-control.yaml
+  - !include ./prints-charming/prints-charming-ams.yaml
+  - !include ./prints-charming/prints-charming-printer.yaml

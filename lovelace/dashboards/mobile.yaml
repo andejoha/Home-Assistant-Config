@@ -8,3 +8,4 @@ views:
   - !include views/living-room.yaml
   - !include views/kitchen.yaml
   - !include views/entrance.yaml
+  - !include views/storage-room.yaml
