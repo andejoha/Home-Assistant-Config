@@ -112,6 +112,11 @@
       metadata: {}
       action: scene.turn_on
       data: {}
+    - device_id: c76309f5f45801bb917a20ba42c55386
+      domain: select
+      entity_id: 2ef8e09090bcc82c4bcb6ee84f32b02b
+      type: select_option
+      option: silent
     else:
     - data: {}
       target:
