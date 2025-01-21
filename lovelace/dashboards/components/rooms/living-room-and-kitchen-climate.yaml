@@ -1,0 +1,4 @@
+type: horizontal-stack
+cards:
+  - !include ../../../graphs/living-room-and-kitchen-temperature.yaml
+  - !include ../../../graphs/living-room-and-kitchen-humidity.yaml

@@ -1,4 +1,4 @@
-title: Stue
+title: Stue & kjøkken
 path: stue
 icon: mdi:bed-king
 subview: true
@@ -7,10 +7,11 @@ cards:
     cards:
       - !include ../components/menu-bar.yaml
       - !include ../../titles/climate.yaml
-      - !include ../components/rooms/living-room-climate.yaml
+      - !include ../components/rooms/living-room-and-kitchen-climate.yaml
       - !include ../../titles/lights.yaml
-      - !include ../../cards/lights/living-room-lights.yaml
+      - !include ../../cards/lights/living-room-and-kitchen-lights.yaml
       - !include ../../titles/devices.yaml
       - !include ../../cards/devices/vacuum.yaml
+      - !include ../../cards/doors/kitchen-sensors.yaml
       - !include ../../titles/automations.yaml
       - !include ../../cards/automations/turn-on-movie-light.yaml

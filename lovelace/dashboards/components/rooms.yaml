@@ -2,12 +2,9 @@ type: vertical-stack
 cards:
   - type: horizontal-stack
     cards:
-      - !include rooms/living-room-navigation.yaml
+      - !include rooms/living-room-and-kitchen-navigation.yaml
       - !include rooms/bedroom-navigation.yaml
   - type: horizontal-stack
     cards:
-      - !include rooms/kitchen-navigation.yaml
-      - !include rooms/entrance-navigation.yaml
-  - type: horizontal-stack
-    cards:
       - !include rooms/storage-room-navigation.yaml
+      - !include rooms/entrance-navigation.yaml

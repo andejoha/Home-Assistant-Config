@@ -5,7 +5,6 @@ kiosk_mode:
 views:
   - !include views/home.yaml
   - !include views/bedroom.yaml
-  - !include views/living-room.yaml
-  - !include views/kitchen.yaml
+  - !include views/living-room-and-kitchen.yaml
   - !include views/entrance.yaml
   - !include views/storage-room.yaml

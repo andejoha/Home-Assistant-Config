@@ -2,7 +2,7 @@ type: custom:stack-in-card
 mode: vertical
 cards:
   - type: custom:mushroom-template-card
-    primary: Kjøkken
+    primary: Stue & kjøkken
     secondary: "{{ states('sensor.temperatursensor_kjokken_temperatur') }} °C"
     icon: |
       {% if is_state('light.stue_lys', 'on') %}
@@ -15,7 +15,7 @@ cards:
       service: script.stuelys
     hold_action:
       action: navigate
-      navigation_path: /lovelace-mobile/kjøkken
+      navigation_path: /lovelace-mobile/stue
     icon_color: |2-
         {% if is_state('light.stue_lys', 'on') %}
           amber
@@ -35,4 +35,4 @@ cards:
     color_thresholds: !include ../../../graphs/temperature-thresholds.yaml
     tap_action:
       action: navigate
-      navigation_path: /lovelace-mobile/kjøkken
+      navigation_path: /lovelace-mobile/stue
